@@ -13,16 +13,35 @@ Lag et tekstfelt og et "tastatur" av forskjellige knapper du kan trykke på.
 Oppdater tekstfeltet til å vise frem hvilke knapper du har trykt 
 på ved å bruke variabler, this og funksjon med parameter -->
 
+<!-- Eksempel fra moodle -->
+<div id="aDiven" onclick="pushedLetter(this)">A</div>
 
-<button id="buttonW" onclick="choosedButton()">W</button><br>
-<button id="buttonA" onclick="choosedButton()">A</button>
-<button id="buttonS" onclick="choosedButton()">S</button>
-<button id="buttonD" onclick="choosedButton()">D</button>
-<p>valgt knapp</p>
+
+<br>
+<!-- Mitt verk -->
+<button id="buttonW" onclick="choosedButton(this)">W</button><br>
+<button id="buttonA" onclick="choosedButton(this)">A</button>
+<button id="buttonS" onclick="choosedButton(this)">S</button>
+<button id="buttonD" onclick="choosedButton(this)">D</button>
+<p id="Show">valgt knapp</p>
 
 
 <script>
-    function choosedButton() {
+    //Eksempel fra moodle//
+    function pushedLetter(htmlElement){ 
+
+    let letterPressed = htmlElement.innerHTML;
+
+    console.log(letterPressed);
+    }
+
+    //Mitt verk//
+    function choosedButton(htmlElement) {
+        let buttonClicked = htmlElement.innerHTML;
+
+        console.log(buttonClicked);
+
+        document.getElementById('Show').innerHTML = buttonClicked;
         
     }
 
